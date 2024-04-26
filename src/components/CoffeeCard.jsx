@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-const CoffeeCard = ({ coffee }) => {
+const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
 
     const { _id, name, quantity, category, brand, details, photo } = coffee;
 
@@ -30,6 +30,8 @@ const CoffeeCard = ({ coffee }) => {
                                 'Your file has been deleted.',
                                 'success'
                             );
+                            const remaining = coffees.filter(coffee => coffee._id !== _id);
+                            setCoffees(remaining);
                         }
                     });
             }
@@ -55,8 +57,8 @@ const CoffeeCard = ({ coffee }) => {
                 </div>
                 <div className="join join-vertical gap-1">
                     <button className="btn join-item">View</button>
-                    <Link className='btn join-item' to={`/updateCoffee/${_id}`}> 
-                    <button>Edit</button>
+                    <Link className='btn join-item' to={`/updateCoffee/${_id}`}>
+                        <button>Edit</button>
                     </Link>
                     <button onClick={() => handleDelete(_id)} className="btn join-item">Delete</button>
                 </div>
@@ -69,5 +71,7 @@ const CoffeeCard = ({ coffee }) => {
 export default CoffeeCard;
 
 CoffeeCard.propTypes = {
-    coffee: PropTypes.object
-};
+    coffee: PropTypes.object,
+    coffees: PropTypes.array,
+    setCoffees: PropTypes.func,
+}

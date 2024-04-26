@@ -49,7 +49,7 @@ const UpdateCoffe = () => {
     return (
         <div>
             <div className="w-fit mx-auto mt-40">
-                <button className="btn mb-4 bg-orange-300"><Link to='/'>Back to home</Link></button>
+                <Link to='/'><button className="btn mb-4 bg-orange-300">Back to home</button></Link>
                 <div className=" bg-orange-300 p-6 rounded-xl">
                     <h3 className="text-center text-2xl font-semibold mb-6">Update {name}</h3>
                     <form onSubmit={handleUpdateCoffee}>
