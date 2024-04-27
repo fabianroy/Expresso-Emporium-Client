@@ -16,7 +16,8 @@ const SignUp = () => {
                 console.log(result.user);
                 const creationTime = result.user?.metadata?.creationTime;
                 const user = {email, password, creationTime};
-                fetch('http://localhost:5000/user', {
+                fetch('https://expresso-server-p66ouhdy9-fabianroys-projects.vercel.app/user', {
+                    mode: 'no-cors',
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

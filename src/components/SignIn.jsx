@@ -18,7 +18,8 @@ const SignIn = () => {
                 console.log(result.user);
                 const lastSignInTime = result.user?.metadata?.lastSignInTime;
                 const user = {email, lastSignInTime};
-                fetch('http://localhost:5000/user', {
+                fetch('https://expresso-server-p66ouhdy9-fabianroys-projects.vercel.app/user', {
+                    mode: 'no-cors',
                     method: 'PATCH',
                     headers: {
                         'content-type': 'application/json'

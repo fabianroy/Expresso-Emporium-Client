@@ -24,7 +24,7 @@ const UpdateCoffe = () => {
 
         // send the new coffee to the server
 
-        fetch(`http://localhost:5000/coffee/${_id}`, {
+        fetch(`expresso-server-p66ouhdy9-fabianroys-projects.vercel.app//coffee/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
