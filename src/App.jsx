@@ -8,6 +8,10 @@ function App() {
   const loadedCoffees = useLoaderData();
   const [coffees, setCoffees] = useState(loadedCoffees);
 
+  const handleSignOut = () => {
+    console.log('signing out');
+  }
+
   return (
 
     <>
@@ -17,6 +21,10 @@ function App() {
         </div>
         <div className='flex items-center gap-4'>
           <NavLink to='/addCoffee' className='btn'>Add Coffee</NavLink>
+          <NavLink to='/users' className='btn'>Users</NavLink>
+          <NavLink to='/signup' className='btn'>SignUp</NavLink>
+          <NavLink to='/signin' className='btn'>SignIn</NavLink>
+          <button onClick={handleSignOut} className='btn'>SignOut</button>
         </div>
       </nav>
       <h3 className='text-center text-2xl mt-10'>Coffees : {coffees.length}</h3>
