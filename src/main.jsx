@@ -18,7 +18,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    loader: () => fetch('https://expresso-server-p66ouhdy9-fabianroys-projects.vercel.app/coffee'),
+    loader: () => fetch('https://expresso-server-ten.vercel.app/coffee'),
     errorElement: <ErrorPage></ErrorPage>
   },
   {
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
   {
     path: '/updateCoffee/:id',
     element: <UpdateCoffee></UpdateCoffee>,
-    loader: ({ params }) => fetch(`https://expresso-server-p66ouhdy9-fabianroys-projects.vercel.app/coffee/${params.id}`),
+    loader: ({ params }) => fetch(`https://expresso-server-ten.vercel.app/coffee/${params.id}`),
   },
   {
     path: '/signup',
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
   {
     path: '/users',
     element: <Users></Users>,
-    loader: () => fetch('https://expresso-server-p66ouhdy9-fabianroys-projects.vercel.app/user'),
+    loader: () => fetch('https://expresso-server-ten.vercel.app/user'),
   }
 ]);
 

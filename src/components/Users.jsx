@@ -19,8 +19,7 @@ const Users = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://expresso-server-p66ouhdy9-fabianroys-projects.vercel.app/user/${id}`, {
-                    mode: 'no-cors',
+                fetch(`https://expresso-server-ten.vercel.app/user/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
